@@ -1,0 +1,18 @@
+# lec.blif
+.model lec
+.inputs clk res din ena
+.outputs dout1 dout2
+.names $false
+.names $true
+1
+.subckt EHL_FLOP C=clk D=din E=$true Q=dout1 R=$true S=$true
+.subckt EHL_FLOP C=clk D=ena E=$true Q=dout2r R=$true S=$true
+.names dout2r dout2
+1 1
+.end
+
+.model EHL_FLOP
+.inputs C D E R S
+.outputs Q
+.blackbox
+.end
