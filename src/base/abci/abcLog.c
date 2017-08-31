@@ -117,11 +117,11 @@ void Abc_NtkWriteLogFile( char * pFileName, Abc_Cex_t * pCex, int Status, int nF
 		{
 			if(i == pCex->nRegs + j * pCex->nPis && j != 0)
 			{
-				fprintf( pFile, "      Regs: ");
-				for(k = 0; k < pCex->nRegs; k++)
-				{
-					fprintf( pFile, "%d", Abc_InfoHasBit(pCex->pData,i) );
-				}
+				// fprintf( pFile, "      Regs: ");
+				// for(k = 0; k < pCex->nRegs; k++)
+				// {
+					// fprintf( pFile, "%d", Abc_InfoHasBit(pCex->pData,i) );
+				// }
 				fprintf( pFile, "\n" );
 				j++;
 			}
