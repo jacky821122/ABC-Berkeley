@@ -24921,6 +24921,7 @@ int Abc_CommandBmc3( Abc_Frame_t * pAbc, int argc, char ** argv )
 	pPars->fUseBridge = pAbc->fBridgeMode;
 	pAbc->Status = Abc_NtkDarBmc3( pNtk, pPars, fOrDecomp );
 	pAbc->nFrames = pNtk->vSeqModelVec ? -1 : pPars->iFrame;
+	Abc_FrameReplaceCex( pAbc, &pNtk->pSeqModel );
 	if ( pLogFileName )
 		Abc_NtkWriteLogFile( pLogFileName, pAbc->pCex, pAbc->Status, pAbc->nFrames, "bmc3" );
 	vSeqModelVec = pNtk->vSeqModelVec;  pNtk->vSeqModelVec = NULL;
